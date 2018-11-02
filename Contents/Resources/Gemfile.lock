@@ -1,7 +1,7 @@
 GEM
   remote: https://rubygems.org/
   specs:
-    webconsole (0.1.19)
+    webconsole (0.2.0)
 
 PLATFORMS
   ruby
@@ -9,5 +9,8 @@ PLATFORMS
 DEPENDENCIES
   webconsole
 
+RUBY VERSION
+   ruby 2.3.7p456
+
 BUNDLED WITH
-   1.10.6
+   1.17.1
