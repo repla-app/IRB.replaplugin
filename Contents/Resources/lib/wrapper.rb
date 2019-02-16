@@ -1,8 +1,8 @@
 require_relative '../bundle/bundler/setup'
 require 'repla/repl'
 
-module WebConsole::REPL::IRB
-  class Wrapper < WebConsole::REPL::Wrapper
+module Repla::REPL::IRB
+  class Wrapper < Repla::REPL::Wrapper
     require_relative "output_controller"
     require_relative "view"
 

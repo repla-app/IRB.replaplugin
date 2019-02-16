@@ -5,7 +5,7 @@ require "repla"
 
 require_relative "lib/wrapper"
 
-wrapper = WebConsole::REPL::IRB::Wrapper.new
+wrapper = Repla::REPL::IRB::Wrapper.new
 
 ARGF.each do |line|
   wrapper.parse_input(line)

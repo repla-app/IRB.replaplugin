@@ -1,8 +1,8 @@
 require_relative '../bundle/bundler/setup'
 require 'repla/repl'
 
-module WebConsole::REPL::IRB
-  class OutputController < WebConsole::REPL::OutputController
+module Repla::REPL::IRB
+  class OutputController < Repla::REPL::OutputController
     def initialize(view)
       super(view)
       @SEEN_PROMPT = false

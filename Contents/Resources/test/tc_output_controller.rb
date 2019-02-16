@@ -4,7 +4,7 @@ require "test/unit"
 require_relative '../bundle/bundler/setup'
 require 'repla'
 
-require WebConsole::shared_test_resource("ruby/test_constants")
+require Repla::shared_test_resource("ruby/test_constants")
 
 require_relative "../lib/view"
 require_relative "../lib/output_controller"
@@ -12,8 +12,8 @@ require_relative "../lib/output_controller"
 class TestOutputController < Test::Unit::TestCase
 
   def setup
-    view = WebConsole::REPL::IRB::View.new
-    @output_controller = WebConsole::REPL::IRB::OutputController.new(view)
+    view = Repla::REPL::IRB::View.new
+    @output_controller = Repla::REPL::IRB::OutputController.new(view)
   end
   
   def teardown
@@ -26,7 +26,7 @@ class TestOutputController < Test::Unit::TestCase
     @output_controller.parse_output("irb(main):001:0> 1 + 1")
     @output_controller.parse_output("irb(main):009:0* 1 + 1")
 
-    javascript = File.read(WebConsole::Tests::LASTCODE_JAVASCRIPT_FILE)
+    javascript = File.read(Repla::Tests::LASTCODE_JAVASCRIPT_FILE)
     result = @output_controller.view.do_javascript(javascript)
     result.strip!
 

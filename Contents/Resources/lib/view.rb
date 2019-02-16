@@ -1,8 +1,8 @@
 require_relative '../bundle/bundler/setup'
 require 'repla/repl'
 
-module WebConsole::REPL::IRB
-  class View < WebConsole::REPL::View
+module Repla::REPL::IRB
+  class View < Repla::REPL::View
     BASE_DIRECTORY = File.join(File.dirname(__FILE__), "..")
     VIEWS_DIRECTORY = File.join(BASE_DIRECTORY, "view")
     VIEW_TEMPLATE = File.join(VIEWS_DIRECTORY, 'view.html.erb')
