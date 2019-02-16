@@ -1,5 +1,5 @@
 require_relative '../bundle/bundler/setup'
-require 'webconsole/repl'
+require 'repla/repl'
 
 module WebConsole::REPL::IRB
   class OutputController < WebConsole::REPL::OutputController

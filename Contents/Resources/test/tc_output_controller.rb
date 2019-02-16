@@ -2,7 +2,7 @@
 
 require "test/unit"
 require_relative '../bundle/bundler/setup'
-require 'webconsole'
+require 'repla'
 
 require WebConsole::shared_test_resource("ruby/test_constants")
 
