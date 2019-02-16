@@ -1,9 +1,9 @@
 #!/System/Library/Frameworks/Ruby.framework/Versions/2.3/usr/bin/ruby
 
-require_relative "bundle/bundler/setup"
-require "repla"
+require_relative 'bundle/bundler/setup'
+require 'repla'
 
-require_relative "lib/wrapper"
+require_relative 'lib/wrapper'
 
 wrapper = Repla::REPL::IRB::Wrapper.new
 

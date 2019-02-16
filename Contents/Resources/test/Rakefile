@@ -4,28 +4,28 @@ require 'repla/test'
 require Repla::Test::HELPER_FILE
 require Repla::Test::REPLA_FILE
 
-task :default => ['irb:tests']
+task default: ['irb:tests']
 
 namespace :irb do
-  
-  task :tests => [:clean_up]
+  task tests: [:clean_up]
 
   task :test_output_controller do
-    output_controller_tests_file = File.join(File.dirname(__FILE__), "tc_output_controller.rb")
+    output_controller_tests_file = File.join(File.dirname(__FILE__),
+                                             'tc_output_controller.rb')
     ruby Shellwords.escape(output_controller_tests_file)
   end
 
-  task :test_wrapper => [:test_output_controller] do
-    wrapper_tests_file = File.join(File.dirname(__FILE__), "tc_wrapper.rb")
+  task test_wrapper: [:test_output_controller] do
+    wrapper_tests_file = File.join(File.dirname(__FILE__), 'tc_wrapper.rb')
     ruby Shellwords.escape(wrapper_tests_file)
   end
 
-  task :test_plugin => [:test_wrapper] do
-    plugin_tests_file = File.join(File.dirname(__FILE__), "tc_plugin.rb")
+  task test_plugin: [:test_wrapper] do
+    plugin_tests_file = File.join(File.dirname(__FILE__), 'tc_plugin.rb')
     ruby Shellwords.escape(plugin_tests_file)
   end
 
-  task :clean_up => [:test_plugin] do
-    Repla::Test::Helper::quit
+  task clean_up: [:test_plugin] do
+    Repla::Test::Helper.quit
   end
 end
