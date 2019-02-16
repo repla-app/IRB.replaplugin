@@ -26,7 +26,7 @@ class TestOutputController < Test::Unit::TestCase
     @output_controller.parse_output("irb(main):001:0> 1 + 1")
     @output_controller.parse_output("irb(main):009:0* 1 + 1")
 
-    javascript = File.read(Repla::Tests::LASTCODE_JAVASCRIPT_FILE)
+    javascript = File.read(Repla::Test::LASTCODE_JAVASCRIPT_FILE)
     result = @output_controller.view.do_javascript(javascript)
     result.strip!
 
