@@ -2,9 +2,7 @@
 
 require "test/unit"
 require_relative '../bundle/bundler/setup'
-require 'repla'
-
-require Repla::shared_test_resource("ruby/test_constants")
+require 'repla/test'
 
 require_relative "../lib/view"
 require_relative "../lib/output_controller"
