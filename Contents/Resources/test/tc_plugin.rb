@@ -10,6 +10,7 @@ require Repla::Test::REPLA_FILE
 
 require_relative 'lib/test_constants'
 
+# Test plugin
 class TestPlugin < Test::Unit::TestCase
   def setup
     Repla.load_plugin(TEST_PLUGIN_PATH)
@@ -42,6 +43,6 @@ class TestPlugin < Test::Unit::TestCase
     # Test Wrapper Output
     javascript = File.read(Repla::Test::LASTCODE_JAVASCRIPT_FILE)
     result = window.do_javascript(javascript)
-    assert_equal(result, TEST_CODE_RESULT, 'The test result should equal the result.')
+    assert_equal(result, TEST_CODE_RESULT)
   end
 end

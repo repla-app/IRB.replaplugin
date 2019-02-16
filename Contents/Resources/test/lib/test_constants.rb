@@ -1,4 +1,5 @@
-TEST_PLUGIN_PATH = File.expand_path(File.join(File.dirname(__FILE__), '../../../..'))
+TEST_PLUGIN_PATH = File.expand_path(File.join(File.dirname(__FILE__),
+                                              '../../../..'))
 TEST_PLUGIN_NAME = 'IRB'.freeze
 
 TEST_CODE = %[def add_numbers(num1, num2)

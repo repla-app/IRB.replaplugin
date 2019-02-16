@@ -7,6 +7,7 @@ require 'repla/test'
 require_relative '../lib/view'
 require_relative '../lib/output_controller'
 
+# Test output controller
 class TestOutputController < Test::Unit::TestCase
   def setup
     view = Repla::REPL::IRB::View.new

@@ -11,6 +11,7 @@ require Repla::Test::REPLA_FILE
 require_relative 'lib/test_constants'
 require_relative '../lib/wrapper'
 
+# Test wrapper
 class TestWrapper < Test::Unit::TestCase
   def test_wrapper
     wrapper = Repla::REPL::IRB::Wrapper.new
@@ -33,7 +34,7 @@ class TestWrapper < Test::Unit::TestCase
     # Test Wrapper Output
     javascript = File.read(Repla::Test::LASTCODE_JAVASCRIPT_FILE)
     result = window.do_javascript(javascript)
-    assert_equal(result, TEST_CODE_RESULT, 'The test result should equal the result.')
+    assert_equal(result, TEST_CODE_RESULT)
 
     window.close
   end
