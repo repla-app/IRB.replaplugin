@@ -17,6 +17,6 @@ module Repla
           load_file(VIEW_TEMPLATE)
         end
       end
-  end
+    end
   end
 end
