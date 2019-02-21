@@ -19,7 +19,6 @@ class TestPlugin < Test::Unit::TestCase
   def teardown
     # window.close
     Repla::Test::Helper.quit
-    Repla::Test::Helper.confirm_dialog
     assert(!Repla::Test::Helper.app_running?)
   end
 
