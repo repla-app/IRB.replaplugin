@@ -1,6 +1,6 @@
 #!/System/Library/Frameworks/Ruby.framework/Versions/2.3/usr/bin/ruby
 
-require 'test/unit'
+require 'minitest/autorun'
 require_relative '../bundle/bundler/setup'
 require 'repla/test'
 
@@ -8,7 +8,7 @@ require_relative '../lib/view'
 require_relative '../lib/output_controller'
 
 # Test output controller
-class TestOutputController < Test::Unit::TestCase
+class TestOutputController < Minitest::Test
   def setup
     view = Repla::REPL::IRB::View.new
     @output_controller = Repla::REPL::IRB::OutputController.new(view)

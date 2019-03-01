@@ -1,6 +1,6 @@
 #!/usr/bin/env ruby
 
-require 'test/unit'
+require 'minitest/autorun'
 
 require_relative '../bundle/bundler/setup'
 require 'repla/test'
@@ -11,15 +11,9 @@ require Repla::Test::REPLA_FILE
 require_relative 'lib/test_constants'
 
 # Test plugin
-class TestPlugin < Test::Unit::TestCase
+class TestPlugin < Minitest::Test
   def setup
     Repla.load_plugin(TEST_PLUGIN_PATH)
-  end
-
-  def teardown
-    # window.close
-    Repla::Test::Helper.quit
-    assert(!Repla::Test::Helper.app_running?)
   end
 
   def test_plugin
@@ -43,5 +37,6 @@ class TestPlugin < Test::Unit::TestCase
     javascript = File.read(Repla::Test::LASTCODE_JAVASCRIPT_FILE)
     result = window.do_javascript(javascript)
     assert_equal(result, TEST_CODE_RESULT)
+    window.close
   end
 end
