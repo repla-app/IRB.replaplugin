@@ -1,6 +1,6 @@
 #!/usr/bin/env ruby
 
-require 'test/unit'
+require 'minitest/autorun'
 
 require_relative '../bundle/bundler/setup'
 require 'repla/test'
@@ -11,7 +11,7 @@ require Repla::Test::REPLA_FILE
 require_relative 'lib/test_constants'
 
 # Test plugin
-class TestPlugin < Test::Unit::TestCase
+class TestPlugin < Minitest::Test
   def setup
     Repla.load_plugin(TEST_PLUGIN_PATH)
   end

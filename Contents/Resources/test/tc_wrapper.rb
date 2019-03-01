@@ -1,6 +1,6 @@
 #!/System/Library/Frameworks/Ruby.framework/Versions/2.3/usr/bin/ruby
 
-require 'test/unit'
+require 'minitest/autorun'
 
 require_relative '../bundle/bundler/setup'
 require 'repla/test'
@@ -12,7 +12,7 @@ require_relative 'lib/test_constants'
 require_relative '../lib/wrapper'
 
 # Test wrapper
-class TestWrapper < Test::Unit::TestCase
+class TestWrapper < Minitest::Test
   def test_wrapper
     wrapper = Repla::REPL::IRB::Wrapper.new
 
