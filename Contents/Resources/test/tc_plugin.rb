@@ -16,12 +16,6 @@ class TestPlugin < Test::Unit::TestCase
     Repla.load_plugin(TEST_PLUGIN_PATH)
   end
 
-  def teardown
-    # window.close
-    Repla::Test::Helper.quit
-    assert(!Repla::Test::Helper.app_running?)
-  end
-
   def test_plugin
     Repla.run_plugin(TEST_PLUGIN_NAME, TEST_PLUGIN_PATH)
 
