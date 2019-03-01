@@ -37,5 +37,6 @@ class TestPlugin < Minitest::Test
     javascript = File.read(Repla::Test::LASTCODE_JAVASCRIPT_FILE)
     result = window.do_javascript(javascript)
     assert_equal(result, TEST_CODE_RESULT)
+    window.close
   end
 end
