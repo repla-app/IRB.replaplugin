@@ -34,7 +34,7 @@ class TestPlugin < Minitest::Test
     end
     result.strip!
     # Remove spans added by highlight.js
-    result.gsub!(%r{</?span.*?>}, '') 
+    result.gsub!(%r{</?span.*?>}, '')
     assert_equal(TEST_CODE, result, 'The test text should equal the result.')
 
     # Test Wrapper Output
