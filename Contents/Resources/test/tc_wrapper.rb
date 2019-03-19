@@ -18,10 +18,12 @@ class TestWrapper < Minitest::Test
 
     test_code = TEST_CODE.tr("\n", "\uFF00") + "\n"
     wrapper.parse_input(test_code)
-
-    sleep Repla::Test::TEST_PAUSE_TIME # Pause for output to be processed
-
-    window_id = Repla::Test::Helper.window_id
+    window_id = nil
+    Repla::Test.block_until do
+      window_id = Repla::Test::Helper.window_id
+      !window_id.nil?
+    end
+    refute_nil(window_id)
     window = Repla::Window.new(window_id)
 
     # Test Wrapper Input
