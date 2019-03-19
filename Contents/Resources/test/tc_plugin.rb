@@ -24,13 +24,17 @@ class TestPlugin < Minitest::Test
 
     test_code = TEST_CODE.tr("\n", "\uFF00") + "\n"
     window.read_from_standard_input(test_code)
-    sleep Repla::Test::TEST_PAUSE_TIME # Pause for output to be processed
 
     # Test Wrapper Input
     javascript = File.read(Repla::Test::FIRSTCODE_JAVASCRIPT_FILE)
-    result = window.do_javascript(javascript)
+    result = nil
+    Repla::Test.block_until do
+      result = window.do_javascript(javascript)
+      !result.nil?
+    end
     result.strip!
-    result.gsub!(%r{</?span.*?>}, '') # Remove spans adding by highlight.js
+    # Remove spans added by highlight.js
+    result.gsub!(%r{</?span.*?>}, '') 
     assert_equal(TEST_CODE, result, 'The test text should equal the result.')
 
     # Test Wrapper Output
