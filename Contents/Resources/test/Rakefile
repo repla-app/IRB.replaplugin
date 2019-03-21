@@ -10,18 +10,18 @@ namespace :irb do
   task tests: [:clean_up]
 
   task :test_output_controller do
-    output_controller_tests_file = File.join(File.dirname(__FILE__),
+    output_controller_tests_file = File.join(__dir__,
                                              'tc_output_controller.rb')
     ruby Shellwords.escape(output_controller_tests_file)
   end
 
   task test_wrapper: [:test_output_controller] do
-    wrapper_tests_file = File.join(File.dirname(__FILE__), 'tc_wrapper.rb')
+    wrapper_tests_file = File.join(__dir__, 'tc_wrapper.rb')
     ruby Shellwords.escape(wrapper_tests_file)
   end
 
   task test_plugin: [:test_wrapper] do
-    plugin_tests_file = File.join(File.dirname(__FILE__), 'tc_plugin.rb')
+    plugin_tests_file = File.join(__dir__, 'tc_plugin.rb')
     ruby Shellwords.escape(plugin_tests_file)
   end
 
