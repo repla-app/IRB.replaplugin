@@ -31,12 +31,12 @@ class TestWrapper < Minitest::Test
     result = window.do_javascript(javascript)
     result.strip!
     result.gsub!(%r{</?span.*?>}, '') # Remove spans adding by highlight.js
-    assert_equal(TEST_CODE, result, 'The test text should equal the result.')
+    assert_equal(TEST_CODE, result)
 
     # Test Wrapper Output
     javascript = File.read(Repla::Test::LASTCODE_JAVASCRIPT_FILE)
     result = window.do_javascript(javascript)
-    assert_equal(result, TEST_CODE_RESULT)
+    assert_equal(TEST_CODE_RESULT, result)
 
     window.close
   end

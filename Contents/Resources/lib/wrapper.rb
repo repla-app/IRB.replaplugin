@@ -10,7 +10,7 @@ module Repla
         require_relative 'view'
 
         def initialize
-          super('/usr/bin/irb')
+          super('/usr/bin/ruby --disable-gems /usr/bin/irb')
         end
 
         def parse_input(input)
@@ -18,14 +18,6 @@ module Repla
           # used here just to consolidate code into one line
           input.tr!("\uFF00", "\n")
           super(input)
-        end
-
-        def output_controller
-          @output_controller ||= OutputController.new(view)
-        end
-
-        def view
-          @view ||= View.new
         end
       end
     end
