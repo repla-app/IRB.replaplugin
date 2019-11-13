@@ -10,7 +10,7 @@ module Repla
         require_relative 'view'
 
         def initialize
-          super('irb')
+          super('/usr/bin/irb')
         end
 
         def parse_input(input)
