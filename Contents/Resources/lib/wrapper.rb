@@ -19,6 +19,14 @@ module Repla
           input.tr!("\uFF00", "\n")
           super(input)
         end
+
+        def output_controller
+          @output_controller ||= OutputController.new(view)
+        end
+
+        def view
+          @view ||= View.new
+        end
       end
     end
   end
