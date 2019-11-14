@@ -27,6 +27,3 @@ AllCops:
     - '**/node_modules/**/*'
     - '**/vendor/**/*'
     - '**/bundle/**/*'
-    - 'Contents/Resources/test/tc_output_controller.rb'
-    - 'Contents/Resources/test/tc_wrapper.rb'
-    - 'Contents/Resources/irb.rb'
