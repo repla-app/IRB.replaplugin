@@ -19,9 +19,9 @@ class TestOutputController < Minitest::Test
   end
 
   def test_output_controller
+    @output_controller.parse_output('irb(main):001:0> 1 + 1')
     test_text = 'Some test text'
     @output_controller.parse_output(test_text)
-    @output_controller.parse_output('irb(main):001:0> 1 + 1')
     @output_controller.parse_output('irb(main):009:0* 1 + 1')
 
     javascript = File.read(Repla::Test::LASTCODE_JAVASCRIPT_FILE)

@@ -8,17 +8,14 @@ module Repla
       class OutputController < Repla::REPL::OutputController
         def initialize(view)
           super(view)
-          # @SEEN_PROMPT = false
+          @seen_prompt = false
         end
 
         def parse_output(output)
-          # Quick hack to fix a bug where on first run IRB is echoing the input
-          # twice
-          # if !@SEEN_PROMPT && output =~ /^=>\s/
-          #   @SEEN_PROMPT = true
-          # else
-          #   return
-          # end
+          # Suppresss Apple's warning message
+          @seen_prompt ||= output =~ /^irb/
+
+          return unless @seen_prompt
 
           # Don't add echo of input
           return if output =~ /^irb\([^)]*\):[^:]*:[^>]*(>|\*)/
