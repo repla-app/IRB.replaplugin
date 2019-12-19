@@ -10,6 +10,7 @@ module Repla
         require_relative 'view'
 
         def initialize
+          @mutex = Mutex.new
           super('/usr/bin/ruby --disable-gems /usr/bin/irb')
         end
 
@@ -25,7 +26,10 @@ module Repla
         end
 
         def view
-          @view ||= View.new
+          @mutex.synchronize do
+            @view = View.new if @view.nil?
+          end
+          @view
         end
       end
     end
